@@ -19,18 +19,6 @@ paths:
             "application/json":
               schema:
                 $ref: "#/components/schemas/PostsList"
-  /todos:
-    get:
-      description: Returns all todos
-      tags: ["Todos"]
-      operationId: "getTodos"
-      responses:
-        "200":
-          description: Successful response
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/TodoList"
 components:
   schemas:
     PostsList:
@@ -38,26 +26,6 @@ components:
       "items":
         $ref: "#/components/schemas/Post"
     Post:
-      "type": "object"
-      "required":
-        - "id"
-        - "userId"
-        - "title"
-        - "completed"
-      "properties":
-        id:
-          type: "integer"
-        userId:
-          type: "integer"
-        title:
-          type: "string"
-        completed:
-          type: "string"
-    TodoList:
-      "type": "array"
-      "items":
-        $ref: "#/components/schemas/Todo"
-    Todo:
       "type": "object"
       "required":
         - "id"
